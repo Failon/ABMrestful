@@ -51,8 +51,7 @@ class UsuarisController extends AbstractController{
 			            $query->bindParam(':nombre', $request->parameters['nombre']);
 			            $query->bindParam(':email', $request->parameters['email']);
 			            $query->bindParam(':password', $request->parameters['password']);
-			            $query->bindParam(':rol', $request->parameters['rol']);		                
-		                $query->execute();
+			            $query->bindParam(':rol', $request->parameters['rol']);
 			            if(!$query){
 			                return $connection->errorInfo();
 			            }else{

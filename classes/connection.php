@@ -6,7 +6,7 @@
 		protected $user;
 		protected $password;
 
-		public function __construct($data){			
+		function __construct($data){			
 			$this->host = $data['host'];
 			$this->db = $data['db'];
 			$this->user = $data['user'];
@@ -15,9 +15,8 @@
 
 
 		public function connect(){
-			$this->conexion = new PDO("mysql:host=$this->host;dbname=$this->db",$this->user,$this->password);
+			$this->conexion = new PDO("mysql:host=".$this->host.";dbname=".$this->db,$this->user,$this->password);
 			return $this->conexion;
 		}
 
 	}
-?>
